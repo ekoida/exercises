@@ -4,12 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercises</title>
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .exercise_two {
+        container-type: inline-size;
+        display: grid;
+        gap: 1rem;
+
+        & .show_students {
+          width: 25%;
+        }
+
+        @container (width > 400px) {
+          .students_table {
+            min-width: 80cqw;
+            border-collapse: collapse;
+            border: 1px solid gray;
+
+            .students_data {
+              & tr:nth-child(odd) {
+                background-color: pink;
+              }
+              & tr:nth-child(even) {
+                background-color: green;
+              }
+
+              & tr > td {
+                padding: 12px;
+              }
+              & tr > td:not(:last-child) {
+                border-inline-end: orange 1px solid;
+              }
+            }
+          }
+        }
+      }
+    </style>
   </head>
   <body>
     <main>
       <section class="exercise_one">
         <button class="show_songs">Show songs</button>
         <ul class="list_of_songs"></ul>
+      </section>
+      <section class="exercise_two">
+        <button class="show_students">Show students table</button>
+        <table class="students_table">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Student Grade</th>
+            </tr>
+          </thead>
+          <tbody class="students_data">
+            <tr>
+              <td colspan="3" align="center">No Data</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
 

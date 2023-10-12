@@ -1,4 +1,5 @@
 import { showListOfSongs } from "./show_list_of_songs.js";
+import { showTableOfStudents } from "./show_table_of_students.js";
 
 ////////////////////////////////////////////////
 // Show list of songs function implementation //
@@ -6,4 +7,8 @@ import { showListOfSongs } from "./show_list_of_songs.js";
 const showSongsButton = document.querySelector(".show_songs");
 showSongsButton.addEventListener("click", showListOfSongs);
 
-/// Rest of the functions
+////////////////////////////////////////////////
+// Show table of students implementation //
+///////////////////////////////////////////////
+const showStudentsTable = document.querySelector(".show_students");
+showStudentsTable.addEventListener("click", showTableOfStudents);
