@@ -36,10 +36,26 @@ const listOfStudents = [
 
 export function showTableOfStudents() {
   // 1 - найти элемент tbody по классу
+  const tbody=document.querySelector(".students_data");
   // 2 - создать элемент tr
+  const tr=document.createElement("tr");
   // 3 - создать элемент td
+  const td=document.createElement("td");
   // 4 - удалить tr c записью No Data
+  tbody.removeChild(tbody.querySelector("tr"));
+
   // 5 - создать цикл для обхода массива с данными студентов
+  for (let i=0; i < listOfStudents.length; i++){
+    const currentTr = tr.cloneNode(true);
+    const currentTdId = td.cloneNode(true);
+    const currentTdName = td.cloneNode(true);
+    const currentTdGrade = td.cloneNode(true);
+    currentTdId.textContent=listOfStudents[i].sdudentId;
+    currentTdName.textContent=listOfStudents[i].studentName;
+    currentTdGrade.textContent=listOfStudents[i].grade;
+    currentTr.append(currentTdId,currentTdName,currentTdGrade);
+    tbody.appendChild(currentTr);
+  }
   // 6 - внутри цикла:
   //   7 - клонировать tr
   //   8 - клонировать td  для каждого свойства студента (id, имя и оценка)
