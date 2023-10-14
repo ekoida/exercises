@@ -34,9 +34,15 @@ const listOfStudents = [
   },
 ];
 
+// Дописать улучшение, чтобы данные в таблице не множились при каждом клике
+//  нам надо сначала вычистить весь контейнер и потом записать по новой.
 export function showTableOfStudents() {
   // 1 - найти элемент tbody по классу
   const tbody = document.querySelector(".students_data");
+
+  // 1.a - удалить предыдущие записи из контейнера
+  // --- код писать тут
+
   // 2 - создать элемент tr
   const tr = document.createElement("tr");
   // 3 - создать элемент td

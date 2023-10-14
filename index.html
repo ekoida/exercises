@@ -8,6 +8,33 @@
       main {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        @container (width > 400px) {
+          .styled_table {
+            min-width: 80cqw;
+            border-collapse: collapse;
+            border: 1px solid gray;
+
+            .table_data {
+              & tr {
+                &:nth-child(odd) {
+                  background-color: pink;
+                }
+                &:nth-child(even) {
+                  background-color: green;
+                }
+                & td {
+                  padding: 12px;
+                  text-align: center;
+                  &:not(:last-child) {
+                    border-inline-end: orange 1px solid;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
       .exercise_two {
@@ -18,27 +45,37 @@
         & .show_students {
           width: 25%;
         }
+      }
 
-        @container (width > 400px) {
-          .students_table {
-            min-width: 80cqw;
-            border-collapse: collapse;
-            border: 1px solid gray;
+      .exercise_three {
+        container-type: inline-size;
+        display: grid;
+        gap: 1rem;
 
-            .students_data {
-              & tr:nth-child(odd) {
-                background-color: pink;
-              }
-              & tr:nth-child(even) {
-                background-color: green;
-              }
+        .data_table {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          .controls {
+            > ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              gap: 0.5rem;
 
-              & tr > td {
-                padding: 12px;
-              }
-              & tr > td:not(:last-child) {
-                border-inline-end: orange 1px solid;
-              }
+              justify-content: flex-end;
+            }
+          }
+
+          .pagination {
+            > ul {
+              list-style: none;
+              display: flex;
+              gap: 0.5rem;
+              margin: 0;
+              padding: 0;
+              justify-content: center;
             }
           }
         }
@@ -53,7 +90,7 @@
       </section>
       <section class="exercise_two">
         <button class="show_students">Show students table</button>
-        <table class="students_table">
+        <table class="styled_table students_table">
           <thead>
             <tr>
               <th>Student ID</th>
@@ -61,12 +98,64 @@
               <th>Student Grade</th>
             </tr>
           </thead>
-          <tbody class="students_data">
+          <tbody class="table_data students_data">
             <tr>
-              <td colspan="3" align="center">No Data</td>
+              <td colspan="3">No Data</td>
             </tr>
           </tbody>
         </table>
+      </section>
+      <section class="exercise_three">
+        <div class="data_table">
+          <nav class="controls">
+            <ul>
+              <li>
+                <label
+                  >Показать по
+                  <select name="items_per_page" class="items_per_page">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                  </select>
+                  на странице
+                </label>
+                <!-- <button>From highest to lowest</button> -->
+              </li>
+            </ul>
+          </nav>
+          <table class="styled_table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>QUANTITY</th>
+                <th>AVAILABLITY</th>
+              </tr>
+            </thead>
+            <tbody class="table_data customs_data">
+              <!-- <tr>
+                <td>1</td>
+                <td>123</td>
+                <td>Zanussy</td>
+                <td>12</td>
+                <td>AVAILABLE IMEDIATELLY</td>
+              </tr> -->
+            </tbody>
+          </table>
+          <nav class="pagination">
+            <ul>
+              <li class="pagination-item"><button>1</button></li>
+              <li class="pagination-item"><button>2</button></li>
+              <li class="pagination-item"><button>3</button></li>
+              <li class="pagination-item"><button>4</button></li>
+              <li class="pagination-item"><button>5</button></li>
+              <li class="pagination-item"><button>6</button></li>
+            </ul>
+          </nav>
+        </div>
       </section>
     </main>
 
