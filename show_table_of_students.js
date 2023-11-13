@@ -42,13 +42,15 @@ export function showTableOfStudents() {
 
   // 1.a - удалить предыдущие записи из контейнера
   // --- код писать тут
-
+  while (tbody.firstChild) {
+    tbody.removeChild(tbody.firstChild);
+  }
   // 2 - создать элемент tr
   const tr = document.createElement("tr");
   // 3 - создать элемент td
   const td = document.createElement("td");
   // 4 - удалить tr c записью No Data
-  tbody.removeChild(tbody.querySelector("tr"));
+  // tbody.removeChild(tbody.querySelector("tr"));
 
   // 5 - создать цикл для обхода массива с данными студентов
   for (let i = 0; i < listOfStudents.length; i++) {

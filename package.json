@@ -1,0 +1,12 @@
+{
+  "name": "exercises",
+  "version": "1.0.0",
+  "description": "js exercises",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "node script.js"
+  },
+  "author": "ekoida",
+  "license": "MIT"
+}

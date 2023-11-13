@@ -7,8 +7,16 @@
     <style>
       main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        max-width: 60vw;
         gap: 2rem;
+
+        > section {
+          &:after {
+            content: "";
+            height: 2px;
+            background: linear-gradient(#ccc, #000);
+          }
+        }
 
         @container (width > 400px) {
           .styled_table {
@@ -40,6 +48,7 @@
       .exercise_two {
         container-type: inline-size;
         display: grid;
+        grid-template-rows: 48px 1fr;
         gap: 1rem;
 
         & .show_students {

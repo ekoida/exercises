@@ -14,6 +14,12 @@ const generateData = (numberOfEntries) => {
   return result;
 };
 
+/**
+ * @module
+ *
+ * @property {Array<{id: Number, name: String, quantity: Number, availabiltiy: 1 | 0}>}
+ *
+ */
 export default [
   {
     id: randomNumber(1000),
